@@ -1,4 +1,4 @@
-package java.com.rmaafs.mysql;
+package com.rmaafs.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,6 +17,7 @@ public class MySQL extends MySQLConfig {
     private Connection con;
 
     public MySQL() {
+        super();
         connect();
         inicializar();
     }
