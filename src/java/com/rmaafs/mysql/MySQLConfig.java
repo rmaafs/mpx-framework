@@ -1,7 +1,7 @@
 /**
  * Rodrigo Maafs | AppsCamelot 2020
  */
-package java.com.rmaafs.mysql;
+package com.rmaafs.mysql;
 
 /**
  *
