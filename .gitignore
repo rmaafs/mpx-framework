@@ -6,6 +6,7 @@ build
 build/*
 dist
 dist*
+src/mpxframework*
 
 build.xml
 manifest.mf
