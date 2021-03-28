@@ -1,8 +1,5 @@
-package com.rmaafs.mysql;
+package java.com.rmaafs.mysql;
 
-import com.rmaafs.filemanager.FileConfiguration;
-import com.rmaafs.filemanager.YamlConfiguration;
-import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -15,34 +12,11 @@ import java.util.logging.Logger;
  *
  * @author Rodrigo M A
  */
-public class MySQL {
+public class MySQL extends MySQLConfig {
 
     private Connection con;
-    private static String mysqlIp, mysqlPort, mysqlDB, mysqlUser, mysqlPass;
-    private File fileConfig = new File("src/com/rmaafs/mysql/mysql-config.yml");
-    private static FileConfiguration config;
 
     public MySQL() {
-        //Si el archivo no existe.
-        if (!fileConfig.exists()) {
-            try {
-                throw new Exception("No se encontró el archivo de configuración de MySQL");
-            } catch (Exception ex) {
-                Logger.getLogger(MySQL.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-        //Únicamente cargar una vez en RAM
-        if (fileConfig.exists() && config == null) {
-            config = YamlConfiguration.loadConfiguration(fileConfig);
-
-            mysqlIp = config.getString("ip");
-            mysqlPort = config.getString("port");
-            mysqlDB = config.getString("database");
-            mysqlUser = config.getString("user");
-            mysqlPass = config.getString("password");
-        }
-
         connect();
         inicializar();
     }
