@@ -10,3 +10,4 @@ src/mpxframework*
 
 build.xml
 manifest.mf
+mysql-config.yml
